@@ -1,43 +1,35 @@
-// Optimized implementation of Bubble sort
-#include <bits/stdc++.h>
+Viewed
+@@ -0,0 +1,33 @@
+#include <iostream>
 using namespace std;
 
-// An optimized version of Bubble Sort
-void bubbleSort(int arr[], int n)
-{
-	int i, j;
-	bool swapped;
-	for (i = 0; i < n - 1; i++) {
-		swapped = false;
-		for (j = 0; j < n - i - 1; j++) {
-			if (arr[j] > arr[j + 1]) {
-				swap(arr[j], arr[j + 1]);
-				swapped = true;
-			}
-		}
+int main() {
+    // Testing the bubble sort algorithm on an integer array
 
-		// If no two elements were swapped
-		// by inner loop, then break
-		if (swapped == false)
-			break;
-	}
-}
+    // Initialize an array with integer values
+    int a[] = { 8, 7, 6, 5, 2, 4, 1, 3, 9 };
 
-// Function to print an array
-void printArray(int arr[], int size)
-{
-	int i;
-	for (i = 0; i < size; i++)
-		cout << " " << arr[i];
-}
+    // Calculate the length of the array//
+    int arrayLength = sizeof(a) / sizeof(int);
 
-// Driver program to test above functions
-int main()
-{
-	int arr[] = { 64, 34, 25, 12, 22, 11, 90 };
-	int N = sizeof(arr) / sizeof(arr[0]);
-	bubbleSort(arr, N);
-	cout << "Sorted array: \n";
-	printArray(arr, N);
-	return 0;
+    // Bubble sort algorithm to sort the array in ascending order
+    for (int i = 0; i < arrayLength; i++) {
+        // Iterate through the array up to the last but one element
+        for (int j = 0; j < arrayLength - 1; j++) {
+            // Compare adjacent elements and swap if necessary to sort in ascending order//
+            if (a[j] > a[j + 1]) {
+                int temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+            }
+        }
+    }
+
+    // Print the sorted array in ascending order
+    cout << "Sorted Array (Ascending Order): ";
+    for (int i = 0; i < arrayLength; i++) {
+        cout << a[i] << " ";
+    }
+
+    return 0; // Indicating successful completion of the program
 }
