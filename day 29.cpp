@@ -11,7 +11,7 @@ int main() {
     // Bubble sort algorithm to sort the array in ascending order
     for (int i = 0; i < arrayLength; i++) { // Loop through each element in the array
         for (int j = 0; j < arrayLength - 1; j++) { // Iterate up to the second-to-last element
-            if (a[j] > a[j + 1]) { // If current element is greater than the next element
+            if (a[j] > a[j + 1]) { // If the current element is greater than the next element
                 // Swap the elements
                 int temp = a[j];
                 a[j] = a[j + 1];
