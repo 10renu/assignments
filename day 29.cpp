@@ -1,5 +1,3 @@
-Viewed
-@@ -0,0 +1,33 @@
 #include <iostream>
 using namespace std;
 
@@ -9,14 +7,14 @@ int main() {
     // Initialize an array with integer values
     int a[] = { 8, 7, 6, 5, 2, 4, 1, 3, 9 };
 
-    // Calculate the length of the array//
+    // Calculate the length of the array
     int arrayLength = sizeof(a) / sizeof(int);
 
     // Bubble sort algorithm to sort the array in ascending order
     for (int i = 0; i < arrayLength; i++) {
         // Iterate through the array up to the last but one element
         for (int j = 0; j < arrayLength - 1; j++) {
-            // Compare adjacent elements and swap if necessary to sort in ascending order//
+            // Compare adjacent elements and swap if necessary to sort in ascending order
             if (a[j] > a[j + 1]) {
                 int temp = a[j];
                 a[j] = a[j + 1];
@@ -31,5 +29,6 @@ int main() {
         cout << a[i] << " ";
     }
 
-    return 0; // Indicating successful completion of the program
+    // Indicating successful completion of the program
+    return 0;
 }
