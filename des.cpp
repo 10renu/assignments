@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-    // Initialize an array with integer values
+    // Initialize an array with integer values.
     int a[] = { 8, 7, 6, 5, 2, 4, 1, 3, 9 };
 
     // Calculate the length of the array
