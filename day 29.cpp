@@ -1,30 +1,43 @@
-#include <iostream>
+// Optimized implementation of Bubble sort
+#include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    // Initialize an array
-    int a[] = { 8, 7, 6, 5, 2, 4, 1, 3, 9 };
-    
-    // Calculate the length of the array
-    int arrayLength = sizeof(a) / sizeof(int);
+// An optimized version of Bubble Sort
+void bubbleSort(int arr[], int n)
+{
+	int i, j;
+	bool swapped;
+	for (i = 0; i < n - 1; i++) {
+		swapped = false;
+		for (j = 0; j < n - i - 1; j++) {
+			if (arr[j] > arr[j + 1]) {
+				swap(arr[j], arr[j + 1]);
+				swapped = true;
+			}
+		}
 
-    // Bubble sort algorithm to sort the array in ascending order
-    for (int i = 0; i < arrayLength; i++) { // Loop through each element in the array
-        for (int j = 0; j < arrayLength - 1; j++) { // Iterate up to the second-to-last element
-            if (a[j] > a[j + 1]) { // If the current element is greater than the next element
-                // Swap the elements
-                int temp = a[j];
-                a[j] = a[j + 1];
-                a[j + 1] = temp;
-            }
-        }
-    }
+		// If no two elements were swapped
+		// by inner loop, then break
+		if (swapped == false)
+			break;
+	}
+}
 
-    // Print the sorted array
-    cout << "Sorted Array: ";
-    for (int i = 0; i < arrayLength; i++) {
-        cout << a[i] << " ";
-    }
+// Function to print an array
+void printArray(int arr[], int size)
+{
+	int i;
+	for (i = 0; i < size; i++)
+		cout << " " << arr[i];
+}
 
-    return 0;
+// Driver program to test above functions
+int main()
+{
+	int arr[] = { 64, 34, 25, 12, 22, 11, 90 };
+	int N = sizeof(arr) / sizeof(arr[0]);
+	bubbleSort(arr, N);
+	cout << "Sorted array: \n";
+	printArray(arr, N);
+	return 0;
 }
